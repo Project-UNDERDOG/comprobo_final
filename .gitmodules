@@ -1,0 +1,3 @@
+[submodule "src/underdog_behaviors"]
+	path = src/underdog_behaviors
+	url = git@github.com:Project-UNDERDOG/underdog_behaviors.git
