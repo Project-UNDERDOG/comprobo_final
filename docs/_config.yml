@@ -1,8 +1,7 @@
 # Site settings
-title: Project UNDREDOG CompRobo website
-email: hhaller@olin.edu
+title: Project UNDERDOG - CompRobo Final
 description: >- # ignores newlines until "baseurl:"
-  Write an awesome description for your new site here.
+  Website for the Project UNDer-Engineered Robot DOG CompRobo Final
 baseurl: "/comprobo_final" # the subpath of your site, e.g. /blog
 url: "https://Project-UNDERDOG.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: Project-UNDERDOG
