@@ -1,0 +1,13 @@
+# Site settings
+title: Project UNDERDOG
+tagline: CompRobo Final Webiste
+description: >- # ignores newlines until "baseurl:"
+  Website for the Project UNDer-Engineered Robot DOG CompRobo Final
+baseurl: "/comprobo_final" # the subpath of your site, e.g. /blog
+url: "https://Project-UNDERDOG.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username: Project-UNDERDOG
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
