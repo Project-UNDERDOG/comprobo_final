@@ -3,7 +3,7 @@ title: Project UNDREDOG CompRobo website
 email: hhaller@olin.edu
 description: >- # ignores newlines until "baseurl:"
   Write an awesome description for your new site here.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/comprobo_final" # the subpath of your site, e.g. /blog
 url: "https://Project-UNDERDOG.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: Project-UNDERDOG
 
