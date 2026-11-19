@@ -1,5 +1,6 @@
 # Site settings
-title: Project UNDERDOG - CompRobo Final
+title: Project UNDERDOG
+tagline: CompRobo Final Webiste
 description: >- # ignores newlines until "baseurl:"
   Website for the Project UNDer-Engineered Robot DOG CompRobo Final
 baseurl: "/comprobo_final" # the subpath of your site, e.g. /blog
