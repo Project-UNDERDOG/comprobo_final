@@ -1,3 +1,22 @@
 # pixi environments
 .pixi/*
 !.pixi/config.toml
+
+# Colcon build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# VSCode
+.vscode/
+
+# pytest-plt
+plots/
+
+# cuda shims
+.cuda-driver-shims/*

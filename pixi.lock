@@ -604,9 +604,18 @@ environments:
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-cartographer-2.0.0-hb0f4dca_27.conda
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-cartographer-ros-2.0.9003-hb0f4dca_27.conda
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-desktop-0.11.0-hb0f4dca_27.conda
+      - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-diagnostic-updater-4.2.7-hb0f4dca_27.conda
+      - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-geographic-msgs-1.0.6-hb0f4dca_27.conda
+      - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-image-transport-5.1.8-hb0f4dca_27.conda
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-nav2-bringup-1.3.13-hb0f4dca_27.conda
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-navigation2-1.3.13-hb0f4dca_27.conda
+      - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-nmea-msgs-2.1.0-hb0f4dca_27.conda
+      - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-point-cloud-transport-4.0.9-hb0f4dca_27.conda
+      - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-robot-state-publisher-3.3.4-hb0f4dca_27.conda
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-ros-gz-1.0.24-hb0f4dca_27.conda
+      - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-xacro-2.1.1-hb0f4dca_27.conda
+      - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-zed-description-0.1.5-hb0f4dca_27.conda
+      - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-zed-msgs-5.3.0-hb0f4dca_27.conda
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-action-msgs-2.0.4-np2py314h53a0733_27.conda
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-action-tutorials-cpp-0.33.11-np2py314h53a0733_27.conda
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-action-tutorials-interfaces-0.33.11-np2py314h53a0733_27.conda
@@ -815,6 +824,7 @@ environments:
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-nav2-voxel-grid-1.3.13-np2py314h53a0733_27.conda
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-nav2-waypoint-follower-1.3.13-np2py314h53a0733_27.conda
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-navigation2-1.3.13-np2py314h53a0733_27.conda
+      - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-nmea-msgs-2.1.0-np2py314h53a0733_27.conda
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-ompl-2.0.1-py314he1d192e_27.conda
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-opennav-docking-1.3.13-np2py314h53a0733_27.conda
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-opennav-docking-bt-1.3.13-np2py314h53a0733_27.conda
@@ -1016,6 +1026,8 @@ environments:
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-visualization-msgs-5.3.8-np2py314h53a0733_27.conda
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-xacro-2.1.1-np2py314h53a0733_27.conda
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-yaml-cpp-vendor-9.0.1-np2py314h53a0733_27.conda
+      - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-zed-description-0.1.5-np2py314h53a0733_27.conda
+      - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-zed-msgs-5.3.0-np2py314h53a0733_27.conda
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-zstd-image-transport-4.0.7-np2py314h050b131_27.conda
       - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-zstd-vendor-0.26.11-np2py314hb9510b1_27.conda
 packages:
@@ -10339,6 +10351,30 @@ packages:
   - ros2-distro-mutex 0.20.* jazzy_*
   size: 2058
   timestamp: 1792691244258
+- conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-diagnostic-updater-4.2.7-hb0f4dca_27.conda
+  sha256: d51ce13785bcca6c3b04f132886e7f685472552441691ebec7d1adfd9baa1835
+  md5: 024b58dd75da8bb68790346d6bec67df
+  depends:
+  - ros2-diagnostic-updater ==4.2.7
+  - ros2-distro-mutex 0.20.* jazzy_*
+  size: 2094
+  timestamp: 1792678247152
+- conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-geographic-msgs-1.0.6-hb0f4dca_27.conda
+  sha256: ba5dff1b7448f962563fa0fd9304177e36d744155842334d3d503f15985f2a22
+  md5: e070b87189ccd01b3352121db5acd6f6
+  depends:
+  - ros2-geographic-msgs ==1.0.6
+  - ros2-distro-mutex 0.20.* jazzy_*
+  size: 2086
+  timestamp: 1792676155962
+- conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-image-transport-5.1.8-hb0f4dca_27.conda
+  sha256: f1bdc2b34343acf965fdfeb068d522813be3a9726e42f902257f8f31a633a227
+  md5: bc9d3969b1929f6f1525e34ff2efc3c3
+  depends:
+  - ros2-image-transport ==5.1.8
+  - ros2-distro-mutex 0.20.* jazzy_*
+  size: 2084
+  timestamp: 1792678660474
 - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-nav2-bringup-1.3.13-hb0f4dca_27.conda
   sha256: c833145e3917ee161f747f3809a59d0162487582dc025dff6e23dfe19a4c9129
   md5: df52076a7112557152eaa1a62cc1254d
@@ -10355,6 +10391,30 @@ packages:
   - ros2-distro-mutex 0.20.* jazzy_*
   size: 2068
   timestamp: 1792689762497
+- conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-nmea-msgs-2.1.0-hb0f4dca_27.conda
+  sha256: 9921d2f71eac78fb87940d2549c617e76e5185a7848a614016d65297501fb87b
+  md5: fae1c96ee877a204c6b3f4891f4712de
+  depends:
+  - ros2-nmea-msgs ==2.1.0
+  - ros2-distro-mutex 0.20.* jazzy_*
+  size: 2052
+  timestamp: 1792675462776
+- conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-point-cloud-transport-4.0.9-hb0f4dca_27.conda
+  sha256: 683750e6cb03b606060320683c85db600350629c0bbffe35f39aca453487fe97
+  md5: 3f3aa13f4303594813c1e8878f9d6a49
+  depends:
+  - ros2-point-cloud-transport ==4.0.9
+  - ros2-distro-mutex 0.20.* jazzy_*
+  size: 2109
+  timestamp: 1792678659003
+- conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-robot-state-publisher-3.3.4-hb0f4dca_27.conda
+  sha256: d6175be68da758fa717813041bb30bfc43dc6f6750de6035ffb4ce8313ff967f
+  md5: 13fe677e6cf811d4893cee4cc1ab1a7f
+  depends:
+  - ros2-robot-state-publisher ==3.3.4
+  - ros2-distro-mutex 0.20.* jazzy_*
+  size: 2107
+  timestamp: 1792679639226
 - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-ros-gz-1.0.24-hb0f4dca_27.conda
   sha256: 17f8bdb22f12a5812ebc3e7fecf10be46e234694a7216f722721fdbb4ee501ba
   md5: 4ce2a926890e60dd87d335c8fee0a7c3
@@ -10363,6 +10423,30 @@ packages:
   - ros2-distro-mutex 0.20.* jazzy_*
   size: 2044
   timestamp: 1792686536563
+- conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-xacro-2.1.1-hb0f4dca_27.conda
+  sha256: a047a569f97860ffcb0cfc6e6e8604ce66ed4782e34d686dfd5a2f0d5b416450
+  md5: d73b6afbb20653eea3713d2747b2315a
+  depends:
+  - ros2-xacro ==2.1.1
+  - ros2-distro-mutex 0.20.* jazzy_*
+  size: 2042
+  timestamp: 1792670537560
+- conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-zed-description-0.1.5-hb0f4dca_27.conda
+  sha256: cf150b39f8c73d7a9f701c80cd5f0ca605e9d2dc83387362a2688963803697aa
+  md5: eb4da676681df183a6fae6aab32f3c7f
+  depends:
+  - ros2-zed-description ==0.1.5
+  - ros2-distro-mutex 0.20.* jazzy_*
+  size: 2081
+  timestamp: 1792685750980
+- conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros-jazzy-zed-msgs-5.3.0-hb0f4dca_27.conda
+  sha256: dc51a3b70246ee768f64f5dde0d9971ae940cef69c968a258d7b20c7fc9b7999
+  md5: c2b3e7ecc8c05f7808999166605ba657
+  depends:
+  - ros2-zed-msgs ==5.3.0
+  - ros2-distro-mutex 0.20.* jazzy_*
+  size: 2053
+  timestamp: 1792678015653
 - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-action-msgs-2.0.4-np2py314h53a0733_27.conda
   sha256: 18a0db953b8127f45aed73ca4737bc78af21309000ce1f30ba957225a7e9ca9b
   md5: 969b7c238e4b7bbc8878401828f3a7ce
@@ -15074,6 +15158,25 @@ packages:
   license: Apache-2.0
   size: 24166
   timestamp: 1792688533705
+- conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-nmea-msgs-2.1.0-np2py314h53a0733_27.conda
+  sha256: 02f9afdf64912b0fe811aa57fbeb8c9e07fd2bd8a11aac6ee82b777b4442bdc2
+  md5: 944ae0e1b6d87bd8bd4847cba823fc7a
+  depends:
+  - python
+  - ros2-builtin-interfaces
+  - ros2-distro-mutex 0.20.* jazzy_*
+  - ros2-ros-workspace
+  - ros2-rosidl-default-runtime
+  - ros2-std-msgs
+  - __glibc >=2.28,<3.0.a0
+  - libstdcxx >=15
+  - libgcc >=15
+  - numpy >=1.25,<3
+  - ros2-distro-mutex >=0.20.0,<0.21.0a0
+  - python_abi 3.14.* *_cp314
+  license: BSD-3-Clause
+  size: 216687
+  timestamp: 1792675297584
 - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-ompl-2.0.1-py314he1d192e_27.conda
   sha256: 084a71df179a6442e43bf4178a51788591145740da34879d8d861b484e7ab751
   md5: f4fe4ce84652f1d6e3b5febd2985ca0b
@@ -19630,6 +19733,44 @@ packages:
   license: Apache-2.0 OR MIT
   size: 24217
   timestamp: 1792669417270
+- conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-zed-description-0.1.5-np2py314h53a0733_27.conda
+  sha256: a1128b52df11a754485a1be618dc294f95bb5c99b64d571793047b7ae48028b4
+  md5: a734e54b3167f283f3606c12d7c7f29f
+  depends:
+  - python
+  - ros2-distro-mutex 0.20.* jazzy_*
+  - ros2-ros-workspace
+  - ros2-rviz2
+  - ros2-xacro
+  - __glibc >=2.28,<3.0.a0
+  - libgcc >=15
+  - libstdcxx >=15
+  - numpy >=1.25,<3
+  - python_abi 3.14.* *_cp314
+  - ros2-distro-mutex >=0.20.0,<0.21.0a0
+  license: Apache-2.0
+  size: 2679893
+  timestamp: 1792684129177
+- conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-zed-msgs-5.3.0-np2py314h53a0733_27.conda
+  sha256: 0095f785fa8d1036efe97ffeda83cff07fa6e6833001740c93802ddc0979b1e2
+  md5: f2650293c0603a0b760fab2d8090d4d6
+  depends:
+  - python
+  - ros2-distro-mutex 0.20.* jazzy_*
+  - ros2-geometry-msgs
+  - ros2-ros-workspace
+  - ros2-rosidl-default-runtime
+  - ros2-shape-msgs
+  - ros2-std-msgs
+  - __glibc >=2.28,<3.0.a0
+  - libstdcxx >=15
+  - libgcc >=15
+  - ros2-distro-mutex >=0.20.0,<0.21.0a0
+  - python_abi 3.14.* *_cp314
+  - numpy >=1.25,<3
+  license: Apache-2.0
+  size: 489888
+  timestamp: 1792676300288
 - conda: https://conda.anaconda.org/robostack-jazzy/linux-64/ros2-zstd-image-transport-4.0.7-np2py314h050b131_27.conda
   sha256: 91e97c70f1d9a39a90560c9c65ae3180d47994b26b99886d98a9f76e99eaa463
   md5: f79b12a69b45b837c95009ea2bf1fc56
