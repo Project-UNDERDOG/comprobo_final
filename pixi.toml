@@ -7,7 +7,7 @@ version = "0.1.0"
 
 [tasks]
 build = {cmd="""colcon build --symlink-install --packages-skip zed_debug \
---packages-up-to zed_display_rviz2 rviz_plugin_zed_od \
+--packages-up-to zed_display_rviz2 rviz_plugin_zed_od underdog_behaviors \
 --cmake-args -DCMAKE_BUILD_TYPE=Release \
 """}
 ros-clean = "rm -r build install log"
