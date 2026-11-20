@@ -12,7 +12,7 @@ build = {cmd="""colcon build --symlink-install --packages-skip zed_debug \
 """}
 ros-clean = "rm -r build install log"
 zed = "ros2 launch zed_wrapper zed_camera.launch.py camera_model:=zedm"
-rviz = "ros2 run rviz2 rviz2"
+rviz = "ros2 launch zed_display_rviz2 display_zed_cam.launch.py camera_model:=zedm"
 rqt = "ros2 run rqt_gui rqt_gui"
 
 [activation]
