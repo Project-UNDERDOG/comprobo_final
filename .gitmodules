@@ -7,3 +7,6 @@
 [submodule "src/zed-ros2-examples"]
 	path = src/zed-ros2-examples
 	url = https://github.com/stereolabs/zed-ros2-examples
+[submodule "src/rosidl_generator_mypy"]
+	path = src/rosidl_generator_mypy
+	url = git@github.com:rospypi/rosidl_generator_mypy.git
