@@ -20,7 +20,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/LegAnglesSet.msg"
   "msg/ServoAngles.msg"
   "msg/ServoAnglesSet.msg"
-  DEPENDENCIES geometry_msgs # Add packages that above messages depend on, in this case geometry_msgs for Sphere.msg
+  "msg/Gesture.msg"
+  DEPENDENCIES geometry_msgs # Add packages that above messages depend on
 )
 
 if(BUILD_TESTING)
