@@ -4,12 +4,9 @@ For the first week of our project we focused on our computational setup and esta
 
 ## Computational setup
 
-For this project we our using robostack as our dependency manager. River has previously developed a template to use for making a CompRobo project based in pixi available [here](https://github.com/rivques/comprobo_ros_pixi_template), which servers as our background for how to set up this project. We additionally had to download the ZED SDK which provides the software needed to connect to the ZED cameras and provides the neural networks that enables much of the ZED's built in functionality. We primarily referred to [this guide](https://docs.stereolabs.com/docs/development/zed-sdk/linux) for installation on linux.
+For this project we our using robostack as our dependency manager. River has previously developed a template to use for making a CompRobo project based in pixi available [here](https://github.com/rivques/comprobo_ros_pixi_template), which provided useful background for how to set up this project. We additionally had to download the ZED SDK which provides the software needed to connect to the ZED cameras and provides the neural networks that enables much of the ZED's built in functionality. We primarily referred to [this guide](https://docs.stereolabs.com/docs/development/zed-sdk/linux) for installation on linux. We also fetched as submodules the [Zed ROS2 wrapper node](https://github.com/Project-UNDERDOG/zed-ros2-wrapper) and the [Zed RViz plugin](https://github.com/stereolabs/zed-ros2-examples/tree/master/zed_display_rviz2).
 
 For milestone 1, in addition to downloading dependencies and setting up a ROS workspace, we established the basic system architecture. The main challenge we face with the system architecture is that Project UNDERDOG (UNDer Engineered Robot DOG) is our final project for both CompRobo and PIE (Principles of Integrated Engineering). We decided we wanted to have two repositories, one for CompRobo and one for PIE, so we could taylor each to the classes requirements. However, we want to share most of the code between these two projects. In order to do this, our code will be spilt between two packages. A small portion is in the `underdog_interfaces` package which provides our custom message types, and the bulk of our code is in the `underdog_behaviors` submodule. The code being in a submodule means we can easily push changes to the submodule from one repository and pull them into another.
-
---- RIVER UPDATES WITH COOL INFO & PICTURES---
-A system arch diagram would be cool
 
 ## Establishing Interfaces and Nodes
 
@@ -35,7 +32,13 @@ To map the area around the robot, we decided to subscribe to the registered_poin
 
 We subscribed to the point cloud topic, transformed the points to the map frame, and published the result to be visualized in RViz 2. Note that the topic being displayed is not one the ZED SDK publishes to, the fixed frame is set to be the map frame, and that the z=0 plane aligns with the floor.
 
+Additionally, we validated the body tracking and camera pose tracking products of the Zed SDK. 
+![RViz2 window showing the raw camera feed, point cloud, detected skeleton, and tracked pose of the camera and odom frame](./assets/rviz_zed_example.png)  
+*RViz2 window showing the raw camera feed, point cloud, detected skeleton, and tracked pose of the camera and odom frame*
+
 # Milestone 2
 
 For milestone two we want all our components to work, and to be tested independently from each other.
 - We want a first draft of the mapper that can publish an occupancy grid that is updated by the camera. For this first draft we will assume all objects are static, meaning any obstacle the camera sees will always be there. In future drafts, which may come in milestone two or three, we want to update it to account for when the camera sees that obstacles have moved, and can be removed from their original location on the map.
+- We want the gesture node to be able to detect when a person in the camera view is pointing somewhere, and calculate where they're pointing in 3D space and where that pointing ray intersects the floor plane.
+- We want the orchestrator to plot a path to a given target point and execute it in simulation, while avoiding obstacles on a manually created map. Ideally, the plotted path will stay as far from obstacles as possible and be relatively smooth.
