@@ -29,8 +29,13 @@ The orchestrator node which will take map data and gesture info to preform some 
 
 StereoLabs (the producer of the ZED camera), provides a ROS2 wrapper for the SDK that allows us to interact with the camera through a node. For this milestone we aimed to gain an understanding of what information we would need from the SDK node, and to start writing code that could take in that information.
 
-To map the area around the robot we decided to subscribe to the registered_point_cloud topic. This topic contains a set of points in 3D space that represent the positions of obstacles in front of the camera. This topic is in the camera's frame so we also need to listen for tf2 transforms from the camera frame to the map frame. In the future we will also need to subscribe the confidence map topic so we can discard points that may add obstacles to the map that don't exist in the real world.
+To map the area around the robot, we decided to subscribe to the registered_point_cloud topic. This topic contains a set of points in 3D space that represent the positions of obstacles in front of the camera. This topic is in the camera's frame, so we also need to listen for tf2 transforms from the camera frame to the map frame. We have found that the point cloud looks quite noisy, which may be an issue when we project it onto our map. In the future, we will subscribe the confidence_map topic so we can discard points that may add unwanted obstacles to the map.
 
 ![RViz2 window showing the point cloud output of our subscriber and transformer code](./assets/point_cloud_transformation.png)
 
-We subscribed to the point cloud topic, transformed the points to the map frame, and published the result to be visualized in RViz2. Note that the topic being displayed is not one the ZED SDK publishes to, the fixed frame is set to be the map frame, and that the z=0 plane aligns with the floor.
+We subscribed to the point cloud topic, transformed the points to the map frame, and published the result to be visualized in RViz 2. Note that the topic being displayed is not one the ZED SDK publishes to, the fixed frame is set to be the map frame, and that the z=0 plane aligns with the floor.
+
+# Milestone 2
+
+For milestone two we want all our components to work, and to be tested independently from each other.
+- We want a first draft of the mapper that can publish an occupancy grid that is updated by the camera. For this first draft we will assume all objects are static, meaning any obstacle the camera sees will always be there. In future drafts, which may come in milestone two or three, we want to update it to account for when the camera sees that obstacles have moved, and can be removed from their original location on the map.
