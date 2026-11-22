@@ -4,19 +4,12 @@ For the first week of our project we focused on our computational setup and esta
 
 ## Computational setup
 
-For this project we our using robostack as our dependency manager. River has previously developed a template to use for making a CompRobo project based in pixi available [here](https://github.com/rivques/comprobo_ros_pixi_template), which servers as our background for how to set up this project. We additionally had to download the ZED sdk which provides the software needed to connect to the ZED cameras and provides the neural networks that enables much of the ZED's built in functionality. We primarily referred to [this guide](https://docs.stereolabs.com/docs/development/zed-sdk/linux) for installation on linux.
+For this project we our using robostack as our dependency manager. River has previously developed a template to use for making a CompRobo project based in pixi available [here](https://github.com/rivques/comprobo_ros_pixi_template), which servers as our background for how to set up this project. We additionally had to download the ZED SDK which provides the software needed to connect to the ZED cameras and provides the neural networks that enables much of the ZED's built in functionality. We primarily referred to [this guide](https://docs.stereolabs.com/docs/development/zed-sdk/linux) for installation on linux.
 
 For milestone 1, in addition to downloading dependencies and setting up a ROS workspace, we established the basic system architecture. The main challenge we face with the system architecture is that Project UNDERDOG (UNDer Engineered Robot DOG) is our final project for both CompRobo and PIE (Principles of Integrated Engineering). We decided we wanted to have two repositories, one for CompRobo and one for PIE, so we could taylor each to the classes requirements. However, we want to share most of the code between these two projects. In order to do this, our code will be spilt between two packages. A small portion is in the `underdog_interfaces` package which provides our custom message types, and the bulk of our code is in the `underdog_behaviors` submodule. The code being in a submodule means we can easily push changes to the submodule from one repository and pull them into another.
 
 --- RIVER UPDATES WITH COOL INFO & PICTURES---
 A system arch diagram would be cool
-
-## Interfacing with hardware
-
-StereoLabs (the producer of the ZED camera), provides a ROS2 wrapper for the SDK that allows us to interact with the camera through a node. For this milestone we aimed ...
-
---- AUSTIN UPDATES WITH COOL INFO & PICTURES---
-Austin put whatever you do here. Pictures would be very nice.
 
 ## Establishing Interfaces and Nodes
 
@@ -30,4 +23,14 @@ The mapper node which will use the data from the camera to create an occupancy g
 
 The gesture node which will identify gestures made by people, where they are, and if applicable the target of the gesture (for example a position being pointed at). This node will subscribe to whatever topics are necessary (likely the published body pose estimation), and it will publish the interpreted behavior as a custom Gesture type on the /gesture topic. The Gesture type will have a header, a geometry Point source, a geometry Point target, and a String type. It will also contain constants for each valid gesture type to act as a enum.
 
-The orchestrator node which will take map data and gesture info to preform some behavior. This node will subscribe to the /map and /gesture topics, along with whatever topics it needs from the ZED node (likely odometry related information). For the MVP this node wil implement path planning to move the robot to a position being pointed at. As a stretch goal behaviors may be moved to an action server and the orchestrator node will use the action sever as we impliment additional behaviors. 
+The orchestrator node which will take map data and gesture info to preform some behavior. This node will subscribe to the /map and /gesture topics, along with whatever topics it needs from the ZED node (likely odometry related information). For the MVP this node wil implement path planning to move the robot to a position being pointed at. As a stretch goal behaviors may be moved to an action server and the orchestrator node will use the action sever as we implement additional behaviors. 
+
+## Interfacing with hardware
+
+StereoLabs (the producer of the ZED camera), provides a ROS2 wrapper for the SDK that allows us to interact with the camera through a node. For this milestone we aimed to gain an understanding of what information we would need from the SDK node, and to start writing code that could take in that information.
+
+To map the area around the robot we decided to subscribe to the registered_point_cloud topic. This topic contains a set of points in 3D space that represent the positions of obstacles in front of the camera. This topic is in the camera's frame so we also need to listen for tf2 transforms from the camera frame to the map frame. In the future we will also need to subscribe the confidence map topic so we can discard points that may add obstacles to the map that don't exist in the real world.
+
+![RViz2 window showing the point cloud output of our subscriber and transformer code](./assets/point_cloud_transformation.png)
+
+We subscribed to the point cloud topic, transformed the points to the map frame, and published the result to be visualized in RViz2. Note that the topic being displayed is not one the ZED SDK publishes to, the fixed frame is set to be the map frame, and that the z=0 plane aligns with the floor.
